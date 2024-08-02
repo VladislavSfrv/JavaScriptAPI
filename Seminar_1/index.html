@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- <style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin: 10px;
+        display: inline-block;
+    }
+</style> -->
+<body> 
+    <!-- <section class = "task">
+        <h1>Определение текущего размера окна браузера</h1>
+        <p>Ширина окна: <span class="window-size" id="width"></span> px</p>
+        <p>Высота окна: <span class="window-size" id="height"></span> px</p>
+    </section>
+
+    <section class="task">
+        <h1>Подтверждение закрытия страницы</h1>
+        <p>Это страника с подтверждением закрытия.</p>
+    </section>
+
+    <section class="task">
+        <h1>Управление историей переходов</h1>
+        <button class="history-button" id="goBack">Назад</button>
+        <button class="history-button" id="goForward">Вперед</button>
+    </section> -->
+
+    <!-- <button id="addButton">Добивать элемент</button>
+    <button id="removeButton">Удалить элемент</button>
+    <button id="cloneButton">Копировать элемент</button>
+    <div id="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div> -->
+    <!-- <div class="container mt-5">
+        <h1 class="mb-4">Список статей</h1>
+        <ul class="list-group" id="articleList">
+
+        </ul>
+        <button class="btn btn-primary mt-3" id="addArticleButton">Добавить статью</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <div>
+        <h1 class="title">Расписание занятий</h1>
+        <ul class="list-group" id="articleList">
+
+        </ul>
+        
+    </div>
+
+    <script src="script.js">
+        // const articleData = [
+        //     {
+        //         title: "Занятие 1",
+        //         time: "Время проведения занятия 1",
+        //         maxPeople: 5,
+        //         tempPeople: 3
+        //     },
+        //     {
+        //         title: "Занятие 2",
+        //         time: "Время проведения занятия 2",
+        //         maxPeople: 10,
+        //         tempPeople: 4
+        //     }
+        // ];
+
+        // //Добавляем JSON расписания занятий на страницу
+
+        // function createArticle(title, time, maxPeople, tempPeople) {
+        //     const articleItem = document.createElement('li');
+        //     articleItem.classList.add("article-li");
+
+        //     const articleTitle = document.createElement('h2');
+        //     articleTitle.textContent = title;
+        //     articleTitle.classList.add('articke-title');
+
+        //     const articleTime = document.createElement('p');
+        //     articleTime.textContent = time;
+        //     articleTime.classList.add('article-time');
+
+        //     const articlePeople = document.createElement('p');
+        //     articlePeople.textContent = `Количество записей на занятие - ${tempPeople} / ${maxPeople}`;
+
+        //     articleItem.append(articleTitle);
+        //     articleItem.append(articleTime);
+        //     articleItem.append(articlePeople);
+
+        //     return articleItem;
+        // }
+
+        // articleData.forEach(element => {
+        //     const articleItem = createArticle(element.title, element.time, element.maxPeople, element.tempPeople);
+        //     articleList.append(articleItem);
+        // });
+
+        // const updateWindowSize = () => {
+        //     const widthEl = window.innerWidth;
+        //     const heightEl = window.innerHeight;
+
+        //     width.textContent = widthEl;
+        //     height.textContent = heightEl;
+        // }
+
+        // window.addEventListener('load', updateWindowSize)
+        // window.addEventListener('resize', updateWindowSize)
+
+        // window.addEventListener('beforeunload', (e) => {
+        //     e.preventDefault();
+        //     e.returnValue = "Останься";
+        // })
+
+        // goBack.addEventListener('load', function(e){
+        //     window.history.back()
+        // })
+
+        // goForward.addEventListener('load', function(e){
+        //     window.history.forward()
+        // })
+        // addButton.addEventListener('click', function (e) {
+        //     const newBox = document.createElement('div');
+        //     newBox.classList.add('box');
+        //     newBox.textContent = container.children.length + 1;
+        //     container.append(newBox);
+        // })
+
+        // removeButton.addEventListener('click', function (e) {  
+        //     if (container.children.length > 0) {
+        //         const lastBox = container.lastChild;
+        //         container.removeChild(lastBox);
+        //     }           
+        // })
+
+        // cloneButton.addEventListener('click', function (e) {
+        //     if (container.children.length > 0) {
+        //         const lastBox = container.lastChild;
+        //         const clone = lastBox.cloneNode(true);
+        //         container.append(clone)
+        //     }
+        // })
+        // const articlesData = [
+        //     {
+        //         title: "Загловок статьи 1",
+        //         content: "Содержание статьи 2"
+        //     },
+        //     {
+        //         title: "Заголовок статьи 2",
+        //         content: "Содержание статьи 2"
+        //     }
+        // ];
+
+        // articlesData.forEach(element => {
+        //     const articleItem = createArticle(element.title, element.content);
+        //     articleList.append(articleItem);
+        // });
+
+        // function createArticle(title, content){
+        //     const articleItem = document.createElement('li');
+        //     articleItem.classList.add('list-group-item');
+
+        //     const articleTitle = document.createElement('h2');
+        //     articleTitle.classList.add('mb-3');
+        //     articleTitle.textContent = title;
+
+        //     const articleContent = document.createElement('p');
+        //     articleContent.textContent = content;
+
+        //     const editButton = document.createElement('button');
+        //     editButton.textContent = "Редактировать";
+        //     editButton.classList.add('btn', 'btn-warning');
+
+        //     const deleteButton = document.createElement('button');
+        //     deleteButton.textContent = "Удалить";
+        //     deleteButton.classList.add('btn', 'btn-danger');
+
+        //     articleItem.append(articleTitle);
+        //     articleItem.append(articleContent);
+        //     articleItem.append(editButton);
+        //     articleItem.append(deleteButton);
+
+        //     return articleItem;
+        // }
+
+        // addArticleButton.addEventListener('click', function (e) {
+        //     const newArticle = {
+        //         title: 'Новая статья',
+        //         content: 'Текст новой статьи'
+        //     }
+
+        //     const articleItem = createArticle(newArticle.title, newArticle.content);
+        //     articleList.append(articleItem);
+        // })
+
+        // articleList.addEventListener('click', function (e) {
+        //     if(e.target.textContent == 'Удалить'){
+        //         const articleItem = e.targer.closest('li');
+        //         articleItem.remove();
+        //     }           
+
+        //     if(e.target.textContent == 'Редактировать'){
+        //         const articleItem = e.targer.closest('li');
+        //         const articleTitle = articleItem.querySelector('h2');
+        //         const articleContent = articleItem.querySelector('p');
+
+        //         const newTitle = prompt('Введите новый заголовок', articleTitle.textContent);
+        //         const newContent = prompt('Введите содержимое статьи', articleContent.textContent);
+
+        //         if (newTitle !== null && newContent !== null) {
+        //             articleTitle.textContent = newTitle;
+        //             articleContent.textContent = newContent;
+        //         }
+        //     } 
+        // })
+    </script>
+</body>
+</html>
