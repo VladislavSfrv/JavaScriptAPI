@@ -2,25 +2,32 @@
 
 const articleData = [
     {
-        title: "Занятие 1",
-        time: "Время проведения занятия 1",
+        title: "JavaScript",
+        time: "10:10",
         maxPeople: 5,
         tempPeople: 3,
         id: 0
     },
     {
-        title: "Занятие 2",
-        time: "Время проведения занятия 2",
+        title: "NodeJS",
+        time: "15:30",
         maxPeople: 10,
         tempPeople: 4,
         id: 1
     },
     {
-        title: "Занятие 3",
-        time: "Время проведения занятия 3",
+        title: "JavaScript API браузеров",
+        time: "19:00",
         maxPeople: 6,
         tempPeople: 1,
         id: 2
+    },
+    {
+        title: "Математика",
+        time: "15:10",
+        maxPeople: 15,
+        tempPeople: 10,
+        id: 3
     }
 ];
 
@@ -30,7 +37,8 @@ const articleData = [
 let uniqueID = 0;
 function createArticle(title, time, maxPeople, tempPeople) {
     const articleItem = document.createElement('li');
-    articleItem.classList.add("article-li");
+    articleItem.classList.add("article-li", "bg-info-subtle","text-center", "row", "border", "border-info", "border-3");
+
 
     const articleTitle = document.createElement('h2');
     articleTitle.textContent = title;
@@ -38,21 +46,20 @@ function createArticle(title, time, maxPeople, tempPeople) {
 
     const articleTime = document.createElement('p');
     articleTime.textContent = time;
-    articleTime.classList.add('article-time');
+    articleTime.classList.add('article-time', 'fs-2');
 
     const articlePeople = document.createElement('p');
     articlePeople.textContent = `Количество записей на занятие - ${tempPeople} / ${maxPeople}`;
-    articlePeople.classList.add(`article-people-${uniqueID}`);
+    articlePeople.classList.add(`article-people-${uniqueID}`, 'fs-3', 'text-decoration-underline');
 
     const articleButtonUp = document.createElement('button');
     articleButtonUp.textContent = "Записаться на занятие";
-    articleButtonUp.classList.add('article-button');
+    articleButtonUp.classList.add('btn', 'btn-success', 'btn-lg');
     articleButtonUp.setAttribute('id', uniqueID);
 
     const articleButtonRemove = document.createElement('button');
     articleButtonRemove.textContent = "Удалить запись";
-    articleButtonRemove.classList.add('article-button');
-    articleButtonUp.classList.add(`btn-remove-${uniqueID}`);
+    articleButtonRemove.classList.add('btn', `btn-remove-${uniqueID}`, 'btn-danger');
     articleButtonRemove.setAttribute('id', uniqueID);
     uniqueID++;
 
@@ -80,10 +87,10 @@ articleList.addEventListener('click', (e) => {
             const buttonID = Number(e.target.id);
             articleData.forEach(element => {
                 if (element.id === buttonID) {
-                    const elementID = element.id;
-                    if (articleData[elementID].tempPeople < articleData[elementID].maxPeople) {
-                        articleData[elementID].tempPeople++;
-                        document.querySelector(`.article-people-${elementID}`).textContent = `Количество записей на занятие - ${articleData[elementID].tempPeople} / ${articleData[elementID].maxPeople}`;
+                    if (articleData[element.id].tempPeople < articleData[element.id].maxPeople) {
+                        articleData[element.id].tempPeople++;
+                        document.querySelector(`.article-people-${element.id}`).textContent = `Количество записей на занятие - ${articleData[element.id].tempPeople} / ${articleData[element.id].maxPeople}`;
+                        document.querySelector(`.btn-remove-${buttonID}`).disabled = false;
                     }else{
                         alert('Свободных мест для записи нет!');
                         document.getElementById(buttonID).disabled = true; 
@@ -94,10 +101,9 @@ articleList.addEventListener('click', (e) => {
             const buttonID = Number(e.target.id);
             articleData.forEach(element => {
                 if (element.id === buttonID) {
-                    const elementID = element.id;
-                    if (articleData[elementID].tempPeople !== 0 ) {
-                        articleData[elementID].tempPeople--;
-                        document.querySelector(`.article-people-${elementID}`).textContent = `Количество записей на занятие - ${articleData[elementID].tempPeople} / ${articleData[elementID].maxPeople}`;
+                    if (articleData[element.id].tempPeople !== 0 ) {
+                        articleData[element.id].tempPeople--;
+                        document.querySelector(`.article-people-${element.id}`).textContent = `Количество записей на занятие - ${articleData[element.id].tempPeople} / ${articleData[element.id].maxPeople}`;
                         document.getElementById(buttonID).disabled = false;
                     }else{
                         document.querySelector(`.btn-remove-${buttonID}`).disabled = true;
