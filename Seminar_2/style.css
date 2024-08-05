@@ -1,0 +1,33 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: 600px;
+}
+
+.image-me{
+    max-width: 1000px;
+    max-height: 500px;
+}
+
+.main-photo-navigation{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-forward{
+    margin-right: 20px;
+}
+
+.btn-back{
+    margin-left: 20px;
+}
+
+.photo-navigation{
+    cursor: pointer;
+}
+
+.photo-navigation-color{
+    color: rgb(79, 136, 211);
+}
