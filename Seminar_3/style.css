@@ -1,0 +1,22 @@
+.unactive{
+    display: none;
+}
+
+.photo-object{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    row-gap: 50px;
+}
+
+.photo{
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgb(2, 159, 180);
+}
+
+.photo-img{
+    max-width: 300px;
+    max-height: 300px;
+}
+
